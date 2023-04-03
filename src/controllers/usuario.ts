@@ -40,15 +40,18 @@ export const postUsuarios = async (req: Request, res: Response) => {
     try {   
 
         const usuario = Usuario.build(body)
+        console.log(usuario)
+
         await usuario.save()
 
      res.json({
-        msg: "El usuario de guardo correctamente", 
+        msg: "El usuario se guardo correctamente", 
         body
     })
     } catch (error) {
+        console.log(error)
      res.json({
-        msg: "Habla ", 
+        msg: "Habla con el admin", 
         body
       })   
     }
